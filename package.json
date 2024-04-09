@@ -1,21 +1,25 @@
 {
     "name": "google-autocomplete",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Fetch Google's autocomplete / query recommendation",
-    "preferGlobal": "false",
-    "main": "autocomplete.js",
+    "private": false,
+    "type": "module",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "author": {
-        "name": "Gordon Zheng",
-        "email": "technix1@gmail.com",
-        "url": "http://sintacks.com"
+        "name": "alikia2x",
+        "email": "alikia2x@outlook.com",
+        "url": "https://alikia2x.com"
     },
-    "keywords": ["google", "google search", "search", "suggestion", "query"],
-    "repository" : {
+    "keywords": [
+        "google",
+        "google search",
+        "search",
+        "suggestion",
+        "query"
+    ],
+    "repository": {
         "type": "git",
-        "url": "https://github.com/capablemonkey/google-autocomplete.git"
-    },
-    "dependencies": {
-        "request": "~2"
-    },
-    "engines": { "node": "*" }
+        "url": "https://github.com/alikia2x/google-autocomplete"
+    }
 }
