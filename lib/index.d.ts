@@ -11,7 +11,7 @@ declare module "search-engine-autocomplete" {
         verbatimRelevance: number;
     }
 
-    function completeGoogle(string: string): Promise<Suggestions>;
+    function completeGoogle(query: string, lang?: string): Promise<Suggestions>;
 
     export { completeGoogle };
 }
