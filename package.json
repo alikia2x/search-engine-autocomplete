@@ -1,6 +1,6 @@
 {
     "name": "search-engine-autocomplete",
-    "version": "0.4.0",
+    "version": "0.4.2",
     "description": "Major search engine's autocomplete / query recommendation",
     "private": false,
     "type": "module",

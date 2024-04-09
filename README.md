@@ -1,40 +1,127 @@
-google-autocomplete
-===================
+# search-engine-autocomplete
 
-Lightweight module that lets you easily fetch google's autocomplete suggestions for a given seed term.  
+This is a package for fetching major search engine's autocomplete / query recommendation.
 
-Getting Started
-===============
+Forked from [capablemonkey/google-autocomplete](https://github.com/capablemonkey/google-autocomplete),
+rewrite with [typescript](https://www.typescriptlang.org/), using modern JS features, with zero dependencies.
 
-Install the package:
+## Getting Started
 
-`npm install google-autocomplete`
+Install:
 
-And do this:
+`npm i search-engine-autocomplete`
 
-```js
-auto = require('google-autocomplete');
-auto.getQuerySuggestions('house', function(err, suggestions) {
-	console.log(suggestions);
-})
+`yarn add search-engine-autocomplete`
+
+`pnpm add search-engine-autocomplete`
+
+And using with:
+
+```typescript
+import { completeGoogle } from "search-engine-autocomplete";
+// if language not provided, default is "en-US"
+const data = await completeGoogle("javascript round", "en-US");
 ```
 
-To get this:
+`data`:
 
-```js
-[
-	{ suggestion: 'house of cards', relevance: 750, type: 'QUERY' },
-	{ suggestion: 'house of prime rib', relevance: 600, type: 'QUERY' },
-	{ suggestion: 'house of cards season 3', relevance: 566, type: 'QUERY' },
-	{ suggestion: 'house of cards season 2', relevance: 565, type: 'QUERY' }
-]
+```JSON
+{
+  "query": "javascript round",
+  "suggestions": [
+    {
+      "suggestion": "javascript round to two decimal places",
+      "relativeRelevance": 0.96308,
+      "relevance": 1252,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to integer",
+      "relativeRelevance": 0.96231,
+      "relevance": 1251,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to 2 decimal places",
+      "relativeRelevance": 0.96154,
+      "relevance": 1250,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round up",
+      "relativeRelevance": 0.61538,
+      "relevance": 800,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to 1 decimal",
+      "relativeRelevance": 0.53846,
+      "relevance": 700,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round down",
+      "relativeRelevance": 0.46231,
+      "relevance": 601,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round function",
+      "relativeRelevance": 0.46154,
+      "relevance": 600,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round float",
+      "relativeRelevance": 0.42846,
+      "relevance": 557,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to nearest 5",
+      "relativeRelevance": 0.42769,
+      "relevance": 556,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round up to whole number",
+      "relativeRelevance": 0.42692,
+      "relevance": 555,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to 3 decimal places",
+      "relativeRelevance": 0.42615,
+      "relevance": 554,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to 4 decimal places",
+      "relativeRelevance": 0.42538,
+      "relevance": 553,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round to nearest 10",
+      "relativeRelevance": 0.42462,
+      "relevance": 552,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round decimals",
+      "relativeRelevance": 0.42385,
+      "relevance": 551,
+      "type": "QUERY"
+    },
+    {
+      "suggestion": "javascript round float to 2 decimals",
+      "relativeRelevance": 0.42308,
+      "relevance": 550,
+      "type": "QUERY"
+    }
+  ],
+  "verbatimRelevance": 1300
+}
 ```
 
-Reference
-=========
-
-1. `autocomplete.getQuerySuggestions(query, callback)` fetches all `QUERY` `type` results (other types of results include `NAVIGATION`, `IMAGE`, and more).  Expects a standard callback function to provide (err, result) arguments to.
-
-2. `autocomplete.getAllSuggestions(query, callback)` fetches all types of suggestion types (result set will include things like places and images, see above).  Expects a standard callback function to provide (err, result) arguments to.
-
-Both methods return an array of objects which include a `relevance` score based on Google Search's judgment.  See the above sample for example.
+Relevance is calculated by Google. Usually, if `relativeRelevance` is greater than 0.98 or 1, then the suggestion could be considered as an auto-complete result and will be automatically filled into the search box in Chrome.
