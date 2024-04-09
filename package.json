@@ -1,7 +1,7 @@
 {
-    "name": "google-autocomplete",
-    "version": "0.1.0",
-    "description": "Fetch Google's autocomplete / query recommendation",
+    "name": "search-engine-autocomplete",
+    "version": "0.2.0",
+    "description": "Major search engine's autocomplete / query recommendation",
     "private": false,
     "type": "module",
     "main": "lib/index.js",
@@ -13,13 +13,13 @@
     },
     "keywords": [
         "google",
-        "google search",
         "search",
         "suggestion",
-        "query"
+        "query",
+        "autocomplete"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/alikia2x/google-autocomplete"
+        "url": "https://github.com/alikia2x/search-engine-autocomplete"
     }
 }
