@@ -13,5 +13,5 @@ declare module "search-engine-autocomplete" {
 
     function completeGoogle(query: string, lang?: string): Promise<Suggestions>;
 
-    export { completeGoogle };
+    export { completeGoogle, Suggestion, Suggestions };
 }
