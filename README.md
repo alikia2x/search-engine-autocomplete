@@ -15,6 +15,8 @@ Install:
 
 `pnpm add search-engine-autocomplete`
 
+`bun i search-engine-autocomplete`
+
 And using with:
 
 ```typescript
