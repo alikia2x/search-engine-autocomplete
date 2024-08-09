@@ -1,4 +1,4 @@
-declare module "search-engine-autocomplete" {
+declare module "@alikia/search-complete" {
     interface Suggestion {
         suggestion: string;
         relevance: number;

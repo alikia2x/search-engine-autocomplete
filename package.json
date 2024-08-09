@@ -1,16 +1,12 @@
 {
-    "name": "search-engine-autocomplete",
+    "name": "@alikia/search-complete",
     "version": "0.4.4",
     "description": "Major search engine's autocomplete / query recommendation",
     "private": false,
     "type": "module",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
-    "author": {
-        "name": "alikia2x",
-        "email": "alikia2x@outlook.com",
-        "url": "https://alikia2x.com"
-    },
+    "author": "alikia2x <alikia2x@outlook.com> (https://alikia2x.com)",
     "keywords": [
         "google",
         "search",
@@ -20,6 +16,14 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/alikia2x/search-engine-autocomplete"
-    }
+        "url": "git+https://github.com/alikia2x/search-engine-autocomplete.git"
+    },
+    "directories": {
+        "lib": "lib"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alikia2x/search-engine-autocomplete/issues"
+    },
+    "homepage": "https://github.com/alikia2x/search-engine-autocomplete#readme"
 }
